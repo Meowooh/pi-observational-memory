@@ -334,6 +334,7 @@ async function runObserverStage(
 			allowedSourceEntryIds: sourceEntryIds,
 			maxTurns: runtime.config.agentMaxTurns,
 			thinkingLevel: runtime.config.model?.thinking ?? "low",
+			modelRegistry: ctx.modelRegistry,
 		});
 	} catch (error) {
 		if (error instanceof ObserverStreamError) {
@@ -405,6 +406,7 @@ async function runReflectorStage(
 		observations: folded.activeObservations,
 		maxTurns: runtime.config.agentMaxTurns,
 		thinkingLevel: runtime.config.model?.thinking ?? "low",
+		modelRegistry: ctx.modelRegistry,
 	});
 	if (!reflections) return { outcome: "continue", sameRunReflections: [] };
 
@@ -479,6 +481,7 @@ async function runDropperStage(
 		targetTokens: runtime.config.observationsPoolTargetTokens,
 		maxTurns: runtime.config.agentMaxTurns,
 		thinkingLevel: runtime.config.model?.thinking ?? "low",
+		modelRegistry: ctx.modelRegistry,
 	});
 	const coversUpToId = earlierCoverageMarkerId(entries, observationCoverageId, sameRunReflectionCoverageId);
 	const data = coversUpToId && droppedIds ? buildObservationsDroppedData(droppedIds, coversUpToId) : undefined;
