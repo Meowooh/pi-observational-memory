@@ -87,7 +87,7 @@ def main():
     reports = [summarize(p.parent) for p in sorted(args.jobs.glob(args.pattern)) if (p.parent / "agent/usage.json").exists()]
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "results.json").write_text(json.dumps(reports, indent=2) + "\n")
-    columns = ["job", "arm", "reward", "infrastructure_interrupted", "configured_price_usd", "api_price_equivalent_usd", "input", "cacheRead", "output", "elapsed_sec", "plan_updates", "completed_plan_boundaries", "compactions", "packed_objects", "placeholder_replays", "estimated_replay_tokens_avoided", "pack_recalls", "worker_errors", "valid_tools", "workers_drained"]
+    columns = ["job", "arm", "reward", "exception", "infrastructure_interrupted", "configured_price_usd", "api_price_equivalent_usd", "input", "cacheRead", "output", "elapsed_sec", "plan_updates", "completed_plan_boundaries", "compactions", "successful_main_responses_after_first_compaction", "packed_objects", "placeholder_replays", "estimated_replay_tokens_avoided", "pack_recalls", "worker_errors", "main_non_abort_error_responses", "valid_tools", "workers_drained"]
     with (args.output / "results.csv").open("w") as stream:
         writer = csv.DictWriter(stream, fieldnames=columns, extrasaction="ignore", lineterminator="\n")
         writer.writeheader()
