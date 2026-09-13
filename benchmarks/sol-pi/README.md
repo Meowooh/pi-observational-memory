@@ -47,6 +47,8 @@ The manifest records task selection, failed infrastructure calibration and the d
 
 `infrastructure_interrupted` marks attempts ending in an unrecovered provider error, even if the verifier happens to pass because required files were written earlier. Keep their spent tokens and costs in the raw results, but exclude them from completion/cost comparisons. The live experiment allows one serial replacement of each interrupted second repetition; task-quality failures are retained and are never rerun to obtain a passing score. Soft background-worker errors are recorded and remain a limitation of otherwise completed trials.
 
+`main_error_responses` is the raw SDK error count, which can include an intentional compaction abort. The separate abort and non-abort counts use the persisted error text; an abort is not, by itself, evidence of a provider outage. Correlate it with compaction events before attributing it.
+
 ## Longer-task exposure check
 
 `run_long_task.py` separately runs the original Terminal-Bench `make-mips-interpreter` task. It first requires a passing official reference solution, then runs `baseline`, `plan`, and `combined` once each, serially. It permits one replacement after a final provider interruption, retaining quality failures and timeouts. Worker thresholds and SoL-Pi economics are unchanged. Results must be reported separately from the Bottle pilot.

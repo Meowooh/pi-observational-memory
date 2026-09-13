@@ -17,6 +17,7 @@ def summarize(trial):
     pack = [r for p in (agent / "sessions").glob("**/observation-pack/ledger.jsonl") for r in rows(p)]
     debug = [r for p in (agent / "observational-memory/debug").glob("*.ndjson") for r in rows(p)]
     tool_results = [r["message"] for r in sessions if r.get("type") == "message" and r.get("message", {}).get("role") == "toolResult"]
+    abort_error_responses = sum(r.get("message", {}).get("role") == "assistant" and r["message"].get("stopReason") == "error" and "aborted" in str(r["message"].get("errorMessage", "")).lower() for r in sessions if r.get("type") == "message")
     tool_counts = Counter(r.get("toolName") for r in tool_results)
     configuration = next(r["data"] for r in meter if r["event"] == "configuration")
     active = [r["data"] for r in meter if r["event"] == "active_tools"]
@@ -69,6 +70,8 @@ def summarize(trial):
         "worker_errors": len(worker_errors),
         "worker_error_kinds": dict(Counter(r["event"] for r in worker_errors)),
         "main_error_responses": sum(r["event"] == "main.usage" and r["data"].get("stopReason") == "error" for r in meter),
+        "main_abort_error_responses": abort_error_responses,
+        "main_non_abort_error_responses": sum(r["event"] == "main.usage" and r["data"].get("stopReason") == "error" for r in meter) - abort_error_responses,
         "final_online_state": {k: states[-1][k] for k in ("epoch", "requestCount", "completedBoundaryRequestCounts", "lastContextTokens", "positiveContextDeltaTotal", "positiveContextDeltaCount", "nativeCompactionCount", "cacheDebtTokens", "cacheDebtRepaymentTokens")} if states else None,
         "peak_provider_context_tokens": max((sum(r["data"]["usage"].get(k, 0) for k in ("input", "cacheRead", "cacheWrite", "output")) for r in meter if r["event"] == "main.usage"), default=0),
         "large_bash_output_files": sum(bool((r.get("details") or {}).get("fullOutputPath")) for r in tool_results),
