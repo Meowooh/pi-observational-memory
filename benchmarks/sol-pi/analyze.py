@@ -69,7 +69,7 @@ def main():
     (args.output / "results.json").write_text(json.dumps(reports, indent=2) + "\n")
     columns = ["job", "arm", "reward", "infrastructure_interrupted", "configured_price_usd", "api_price_equivalent_usd", "input", "cacheRead", "output", "elapsed_sec", "plan_updates", "completed_plan_boundaries", "compactions", "packed_objects", "placeholder_replays", "estimated_replay_tokens_avoided", "pack_recalls", "worker_errors", "valid_tools", "workers_drained"]
     with (args.output / "results.csv").open("w") as stream:
-        writer = csv.DictWriter(stream, fieldnames=columns, extrasaction="ignore")
+        writer = csv.DictWriter(stream, fieldnames=columns, extrasaction="ignore", lineterminator="\n")
         writer.writeheader()
         writer.writerows(reports)
     print(json.dumps([{k: r[k] for k in columns} for r in reports], indent=2))
