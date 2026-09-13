@@ -1,0 +1,1053 @@
+[
+  {
+    "job": "luna-bottle-baseline-valid-1",
+    "trial": "fix-code-vulnerability__cjtcNpr",
+    "reward": 1.0,
+    "exception": null,
+    "requests": 24,
+    "input": 91971,
+    "cacheRead": 249344,
+    "cacheWrite": 0,
+    "output": 4295,
+    "configured_price_usd": 0.14267539999999998,
+    "api_price_equivalent_usd": 0.02853508,
+    "by_stage": {
+      "main": {
+        "requests": 16,
+        "input": 35936,
+        "cacheRead": 209920,
+        "cacheWrite": 0,
+        "output": 2851
+      },
+      "observer": {
+        "requests": 6,
+        "input": 54970,
+        "cacheRead": 33792,
+        "cacheWrite": 0,
+        "output": 1199
+      },
+      "reflector": {
+        "requests": 2,
+        "input": 1065,
+        "cacheRead": 5632,
+        "cacheWrite": 0,
+        "output": 245
+      }
+    },
+    "arm": "baseline",
+    "elapsed_sec": 108.47564591700211,
+    "exit_code": 0,
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": false,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": true,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09a87-67c4-7755-81bf-6aad5e0f9e5c"
+    },
+    "tool_counts": {
+      "update_plan": 5,
+      "bash": 17,
+      "edit": 1,
+      "write": 1
+    },
+    "plan_updates": 5,
+    "completed_plan_boundaries": 3,
+    "compactions": 0,
+    "compaction_failures": 0,
+    "packed_objects": 0,
+    "placeholder_replays": 0,
+    "estimated_replay_tokens_avoided": 0,
+    "pack_recalls": 0,
+    "worker_errors": 1,
+    "worker_error_kinds": {
+      "reflector.stream_error": 1
+    },
+    "main_error_responses": 3,
+    "final_online_state": null,
+    "peak_provider_context_tokens": 29181,
+    "large_bash_output_files": 0
+  },
+  {
+    "job": "luna-bottle-baseline-valid-2",
+    "trial": "fix-code-vulnerability__b94YvLY",
+    "reward": 1.0,
+    "exception": null,
+    "requests": 24,
+    "input": 62966,
+    "cacheRead": 208896,
+    "cacheWrite": 0,
+    "output": 3734,
+    "configured_price_usd": 0.10625959999999998,
+    "api_price_equivalent_usd": 0.02125192,
+    "by_stage": {
+      "main": {
+        "requests": 14,
+        "input": 29835,
+        "cacheRead": 186368,
+        "cacheWrite": 0,
+        "output": 2610
+      },
+      "observer": {
+        "requests": 4,
+        "input": 30584,
+        "cacheRead": 11264,
+        "cacheWrite": 0,
+        "output": 865
+      },
+      "reflector": {
+        "requests": 6,
+        "input": 2547,
+        "cacheRead": 11264,
+        "cacheWrite": 0,
+        "output": 259
+      }
+    },
+    "arm": "baseline",
+    "elapsed_sec": 121.19177595799556,
+    "exit_code": 0,
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": false,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": true,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09a90-ce80-765e-a7d1-157042609c0a"
+    },
+    "tool_counts": {
+      "update_plan": 4,
+      "bash": 18,
+      "read": 1,
+      "edit": 1,
+      "write": 1
+    },
+    "plan_updates": 4,
+    "completed_plan_boundaries": 3,
+    "compactions": 0,
+    "compaction_failures": 0,
+    "packed_objects": 0,
+    "placeholder_replays": 0,
+    "estimated_replay_tokens_avoided": 0,
+    "pack_recalls": 0,
+    "worker_errors": 5,
+    "worker_error_kinds": {
+      "observer.stream_error": 1,
+      "reflector.stream_error": 4
+    },
+    "main_error_responses": 2,
+    "final_online_state": null,
+    "peak_provider_context_tokens": 28413,
+    "large_bash_output_files": 0
+  },
+  {
+    "job": "luna-bottle-combined-valid-1",
+    "trial": "fix-code-vulnerability__cVijMtQ",
+    "reward": 1.0,
+    "exception": null,
+    "requests": 23,
+    "input": 79306,
+    "cacheRead": 202240,
+    "cacheWrite": 0,
+    "output": 4114,
+    "configured_price_usd": 0.12421399999999999,
+    "api_price_equivalent_usd": 0.024842799999999998,
+    "by_stage": {
+      "main": {
+        "requests": 17,
+        "input": 38797,
+        "cacheRead": 162304,
+        "cacheWrite": 0,
+        "output": 3158
+      },
+      "observer": {
+        "requests": 4,
+        "input": 38170,
+        "cacheRead": 28672,
+        "cacheWrite": 0,
+        "output": 761
+      },
+      "reflector": {
+        "requests": 2,
+        "input": 2339,
+        "cacheRead": 11264,
+        "cacheWrite": 0,
+        "output": 195
+      }
+    },
+    "arm": "combined",
+    "elapsed_sec": 126.74772320804186,
+    "exit_code": 0,
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": false,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": false,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09a87-67c4-7513-90d8-ffb8e1c89e31"
+    },
+    "tool_counts": {
+      "update_plan": 4,
+      "bash": 17,
+      "edit": 1,
+      "write": 1
+    },
+    "plan_updates": 4,
+    "completed_plan_boundaries": 3,
+    "compactions": 0,
+    "compaction_failures": 0,
+    "packed_objects": 2,
+    "placeholder_replays": 14,
+    "estimated_replay_tokens_avoided": 39776,
+    "pack_recalls": 0,
+    "worker_errors": 0,
+    "worker_error_kinds": {},
+    "main_error_responses": 3,
+    "final_online_state": {
+      "epoch": 0,
+      "requestCount": 17,
+      "completedBoundaryRequestCounts": [
+        6,
+        8,
+        2
+      ],
+      "lastContextTokens": 17117,
+      "positiveContextDeltaTotal": 23005,
+      "positiveContextDeltaCount": 11,
+      "nativeCompactionCount": 0,
+      "cacheDebtTokens": 0,
+      "cacheDebtRepaymentTokens": 0
+    },
+    "peak_provider_context_tokens": 22763,
+    "large_bash_output_files": 0
+  },
+  {
+    "job": "luna-bottle-combined-valid-2",
+    "trial": "fix-code-vulnerability__m9sBkts",
+    "reward": 1.0,
+    "exception": null,
+    "requests": 23,
+    "input": 129168,
+    "cacheRead": 102912,
+    "cacheWrite": 0,
+    "output": 3611,
+    "configured_price_usd": 0.16112519999999997,
+    "api_price_equivalent_usd": 0.03222504,
+    "by_stage": {
+      "main": {
+        "requests": 13,
+        "input": 59910,
+        "cacheRead": 80384,
+        "cacheWrite": 0,
+        "output": 2500
+      },
+      "observer": {
+        "requests": 8,
+        "input": 55984,
+        "cacheRead": 22528,
+        "cacheWrite": 0,
+        "output": 907
+      },
+      "reflector": {
+        "requests": 2,
+        "input": 13274,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "output": 204
+      }
+    },
+    "arm": "combined",
+    "elapsed_sec": 105.81452441599686,
+    "exit_code": 0,
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": false,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": false,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09a90-ce80-7194-8f73-312f43b854a1"
+    },
+    "tool_counts": {
+      "update_plan": 4,
+      "bash": 14,
+      "edit": 1,
+      "write": 1
+    },
+    "plan_updates": 4,
+    "completed_plan_boundaries": 3,
+    "compactions": 0,
+    "compaction_failures": 0,
+    "packed_objects": 4,
+    "placeholder_replays": 25,
+    "estimated_replay_tokens_avoided": 104816,
+    "pack_recalls": 0,
+    "worker_errors": 4,
+    "worker_error_kinds": {
+      "observer.stream_error": 4
+    },
+    "main_error_responses": 2,
+    "final_online_state": {
+      "epoch": 0,
+      "requestCount": 13,
+      "completedBoundaryRequestCounts": [
+        5,
+        2,
+        5
+      ],
+      "lastContextTokens": 13734,
+      "positiveContextDeltaTotal": 28373,
+      "positiveContextDeltaCount": 7,
+      "nativeCompactionCount": 0,
+      "cacheDebtTokens": 0,
+      "cacheDebtRepaymentTokens": 0
+    },
+    "peak_provider_context_tokens": 22805,
+    "large_bash_output_files": 0
+  },
+  {
+    "job": "luna-bottle-original-valid-1",
+    "trial": "fix-code-vulnerability__9H9dvp6",
+    "reward": 1.0,
+    "exception": null,
+    "requests": 15,
+    "input": 88230,
+    "cacheRead": 140288,
+    "cacheWrite": 0,
+    "output": 3021,
+    "configured_price_usd": 0.12038479999999999,
+    "api_price_equivalent_usd": 0.02407696,
+    "by_stage": {
+      "main": {
+        "requests": 9,
+        "input": 44188,
+        "cacheRead": 112128,
+        "cacheWrite": 0,
+        "output": 2059
+      },
+      "observer": {
+        "requests": 4,
+        "input": 41828,
+        "cacheRead": 16896,
+        "cacheWrite": 0,
+        "output": 695
+      },
+      "reflector": {
+        "requests": 2,
+        "input": 2214,
+        "cacheRead": 11264,
+        "cacheWrite": 0,
+        "output": 267
+      }
+    },
+    "arm": "original",
+    "elapsed_sec": 94.65388829202857,
+    "exit_code": 0,
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": false,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": true,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09a94-821a-778b-bc58-0521c1f55fc0"
+    },
+    "tool_counts": {
+      "bash": 15,
+      "edit": 1,
+      "write": 1
+    },
+    "plan_updates": 0,
+    "completed_plan_boundaries": 0,
+    "compactions": 0,
+    "compaction_failures": 0,
+    "packed_objects": 0,
+    "placeholder_replays": 0,
+    "estimated_replay_tokens_avoided": 0,
+    "pack_recalls": 0,
+    "worker_errors": 0,
+    "worker_error_kinds": {},
+    "main_error_responses": 0,
+    "final_online_state": null,
+    "peak_provider_context_tokens": 28089,
+    "large_bash_output_files": 0
+  },
+  {
+    "job": "luna-bottle-original-valid-2",
+    "trial": "fix-code-vulnerability__rDzuAsn",
+    "reward": 1.0,
+    "exception": null,
+    "requests": 16,
+    "input": 104343,
+    "cacheRead": 129536,
+    "cacheWrite": 0,
+    "output": 3407,
+    "configured_price_usd": 0.13773860000000002,
+    "api_price_equivalent_usd": 0.02754772,
+    "by_stage": {
+      "main": {
+        "requests": 10,
+        "input": 56883,
+        "cacheRead": 95744,
+        "cacheWrite": 0,
+        "output": 2369
+      },
+      "observer": {
+        "requests": 4,
+        "input": 45059,
+        "cacheRead": 22528,
+        "cacheWrite": 0,
+        "output": 757
+      },
+      "reflector": {
+        "requests": 2,
+        "input": 2401,
+        "cacheRead": 11264,
+        "cacheWrite": 0,
+        "output": 281
+      }
+    },
+    "arm": "original",
+    "elapsed_sec": 141.1401205409784,
+    "exit_code": 0,
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": false,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": true,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09a97-0d02-7692-b602-37f5c5d49b1b"
+    },
+    "tool_counts": {
+      "bash": 19,
+      "edit": 1,
+      "write": 1
+    },
+    "plan_updates": 0,
+    "completed_plan_boundaries": 0,
+    "compactions": 0,
+    "compaction_failures": 0,
+    "packed_objects": 0,
+    "placeholder_replays": 0,
+    "estimated_replay_tokens_avoided": 0,
+    "pack_recalls": 0,
+    "worker_errors": 0,
+    "worker_error_kinds": {},
+    "main_error_responses": 0,
+    "final_online_state": null,
+    "peak_provider_context_tokens": 25631,
+    "large_bash_output_files": 0
+  },
+  {
+    "job": "luna-bottle-pack-valid-1",
+    "trial": "fix-code-vulnerability__PqydEvx",
+    "reward": 1.0,
+    "exception": null,
+    "requests": 20,
+    "input": 69721,
+    "cacheRead": 139776,
+    "cacheWrite": 0,
+    "output": 3450,
+    "configured_price_usd": 0.10439860000000001,
+    "api_price_equivalent_usd": 0.02087972,
+    "by_stage": {
+      "main": {
+        "requests": 14,
+        "input": 38394,
+        "cacheRead": 111616,
+        "cacheWrite": 0,
+        "output": 2208
+      },
+      "observer": {
+        "requests": 4,
+        "input": 28614,
+        "cacheRead": 16896,
+        "cacheWrite": 0,
+        "output": 953
+      },
+      "reflector": {
+        "requests": 2,
+        "input": 2713,
+        "cacheRead": 11264,
+        "cacheWrite": 0,
+        "output": 289
+      }
+    },
+    "arm": "pack",
+    "elapsed_sec": 110.11843120900448,
+    "exit_code": 0,
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": false,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": true,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09a89-ffb2-7668-8b5c-58aa7ac39e4d"
+    },
+    "tool_counts": {
+      "update_plan": 4,
+      "bash": 13,
+      "edit": 1,
+      "write": 1
+    },
+    "plan_updates": 4,
+    "completed_plan_boundaries": 3,
+    "compactions": 0,
+    "compaction_failures": 0,
+    "packed_objects": 2,
+    "placeholder_replays": 18,
+    "estimated_replay_tokens_avoided": 62307,
+    "pack_recalls": 0,
+    "worker_errors": 1,
+    "worker_error_kinds": {
+      "observer.stream_error": 1
+    },
+    "main_error_responses": 3,
+    "final_online_state": null,
+    "peak_provider_context_tokens": 20638,
+    "large_bash_output_files": 0
+  },
+  {
+    "job": "luna-bottle-pack-valid-2",
+    "trial": "fix-code-vulnerability__VoS559a",
+    "reward": 0.0,
+    "exception": null,
+    "requests": 18,
+    "input": 108274,
+    "cacheRead": 81408,
+    "cacheWrite": 0,
+    "output": 2575,
+    "configured_price_usd": 0.1318648,
+    "api_price_equivalent_usd": 0.026372960000000004,
+    "by_stage": {
+      "main": {
+        "requests": 12,
+        "input": 49174,
+        "cacheRead": 58880,
+        "cacheWrite": 0,
+        "output": 1498
+      },
+      "observer": {
+        "requests": 4,
+        "input": 57265,
+        "cacheRead": 11264,
+        "cacheWrite": 0,
+        "output": 896
+      },
+      "reflector": {
+        "requests": 2,
+        "input": 1835,
+        "cacheRead": 11264,
+        "cacheWrite": 0,
+        "output": 181
+      }
+    },
+    "arm": "pack",
+    "elapsed_sec": 90.99923299998045,
+    "exit_code": 0,
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": true,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": true,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09a8e-6183-7571-a8ca-5fd05f7931ce"
+    },
+    "tool_counts": {
+      "update_plan": 2,
+      "bash": 15
+    },
+    "plan_updates": 2,
+    "completed_plan_boundaries": 1,
+    "compactions": 0,
+    "compaction_failures": 0,
+    "packed_objects": 3,
+    "placeholder_replays": 19,
+    "estimated_replay_tokens_avoided": 57815,
+    "pack_recalls": 0,
+    "worker_errors": 0,
+    "worker_error_kinds": {},
+    "main_error_responses": 4,
+    "final_online_state": null,
+    "peak_provider_context_tokens": 22201,
+    "large_bash_output_files": 0
+  },
+  {
+    "job": "luna-bottle-pack-valid-2-retry1",
+    "trial": "fix-code-vulnerability__Pu2tjz9",
+    "reward": 0.0,
+    "exception": null,
+    "requests": 18,
+    "input": 109246,
+    "cacheRead": 148992,
+    "cacheWrite": 0,
+    "output": 3708,
+    "configured_price_usd": 0.1463932,
+    "api_price_equivalent_usd": 0.029278639999999998,
+    "by_stage": {
+      "main": {
+        "requests": 12,
+        "input": 47986,
+        "cacheRead": 120832,
+        "cacheWrite": 0,
+        "output": 2628
+      },
+      "observer": {
+        "requests": 4,
+        "input": 59395,
+        "cacheRead": 16896,
+        "cacheWrite": 0,
+        "output": 810
+      },
+      "reflector": {
+        "requests": 2,
+        "input": 1865,
+        "cacheRead": 11264,
+        "cacheWrite": 0,
+        "output": 270
+      }
+    },
+    "arm": "pack",
+    "elapsed_sec": 124.17728541698307,
+    "exit_code": 0,
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": false,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": true,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09a9c-5623-711b-8453-96a8689fbabf"
+    },
+    "tool_counts": {
+      "update_plan": 4,
+      "bash": 15,
+      "edit": 1,
+      "write": 1
+    },
+    "plan_updates": 4,
+    "completed_plan_boundaries": 3,
+    "compactions": 0,
+    "compaction_failures": 0,
+    "packed_objects": 3,
+    "placeholder_replays": 15,
+    "estimated_replay_tokens_avoided": 63849,
+    "pack_recalls": 0,
+    "worker_errors": 0,
+    "worker_error_kinds": {},
+    "main_error_responses": 0,
+    "final_online_state": null,
+    "peak_provider_context_tokens": 21365,
+    "large_bash_output_files": 0
+  },
+  {
+    "job": "luna-bottle-plan-valid-1",
+    "trial": "fix-code-vulnerability__ZqTZRwX",
+    "reward": 0.0,
+    "exception": null,
+    "requests": 26,
+    "input": 113454,
+    "cacheRead": 313856,
+    "cacheWrite": 0,
+    "output": 4620,
+    "configured_price_usd": 0.1725596,
+    "api_price_equivalent_usd": 0.03451192,
+    "by_stage": {
+      "main": {
+        "requests": 17,
+        "input": 40843,
+        "cacheRead": 268800,
+        "cacheWrite": 0,
+        "output": 2944
+      },
+      "observer": {
+        "requests": 6,
+        "input": 69748,
+        "cacheRead": 33792,
+        "cacheWrite": 0,
+        "output": 1343
+      },
+      "reflector": {
+        "requests": 3,
+        "input": 2863,
+        "cacheRead": 11264,
+        "cacheWrite": 0,
+        "output": 333
+      }
+    },
+    "arm": "plan",
+    "elapsed_sec": 146.91075320902746,
+    "exit_code": 0,
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": false,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": false,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09a89-ffb2-760e-afe6-f0f69aac97dc"
+    },
+    "tool_counts": {
+      "update_plan": 3,
+      "bash": 24,
+      "edit": 1,
+      "write": 1
+    },
+    "plan_updates": 3,
+    "completed_plan_boundaries": 2,
+    "compactions": 0,
+    "compaction_failures": 0,
+    "packed_objects": 0,
+    "placeholder_replays": 0,
+    "estimated_replay_tokens_avoided": 0,
+    "pack_recalls": 0,
+    "worker_errors": 1,
+    "worker_error_kinds": {
+      "reflector.stream_error": 1
+    },
+    "main_error_responses": 3,
+    "final_online_state": {
+      "epoch": 0,
+      "requestCount": 17,
+      "completedBoundaryRequestCounts": [
+        9,
+        4
+      ],
+      "lastContextTokens": 33283,
+      "positiveContextDeltaTotal": 31514,
+      "positiveContextDeltaCount": 13,
+      "nativeCompactionCount": 0,
+      "cacheDebtTokens": 0,
+      "cacheDebtRepaymentTokens": 0
+    },
+    "peak_provider_context_tokens": 33436,
+    "large_bash_output_files": 0
+  },
+  {
+    "job": "luna-bottle-plan-valid-2",
+    "trial": "fix-code-vulnerability__f5ph8fh",
+    "reward": 1.0,
+    "exception": null,
+    "requests": 26,
+    "input": 93697,
+    "cacheRead": 153088,
+    "cacheWrite": 0,
+    "output": 3267,
+    "configured_price_usd": 0.1286078,
+    "api_price_equivalent_usd": 0.025721560000000004,
+    "by_stage": {
+      "main": {
+        "requests": 12,
+        "input": 30175,
+        "cacheRead": 124928,
+        "cacheWrite": 0,
+        "output": 2056
+      },
+      "observer": {
+        "requests": 5,
+        "input": 55866,
+        "cacheRead": 22528,
+        "cacheWrite": 0,
+        "output": 990
+      },
+      "reflector": {
+        "requests": 9,
+        "input": 7656,
+        "cacheRead": 5632,
+        "cacheWrite": 0,
+        "output": 221
+      }
+    },
+    "arm": "plan",
+    "elapsed_sec": 93.41729120799573,
+    "exit_code": 0,
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": true,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": false,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09a8e-6183-7190-ace3-8af427f7ac7e"
+    },
+    "tool_counts": {
+      "update_plan": 2,
+      "bash": 13,
+      "read": 1,
+      "edit": 1,
+      "write": 1
+    },
+    "plan_updates": 2,
+    "completed_plan_boundaries": 1,
+    "compactions": 0,
+    "compaction_failures": 0,
+    "packed_objects": 0,
+    "placeholder_replays": 0,
+    "estimated_replay_tokens_avoided": 0,
+    "pack_recalls": 0,
+    "worker_errors": 8,
+    "worker_error_kinds": {
+      "observer.stream_error": 1,
+      "reflector.stream_error": 7
+    },
+    "main_error_responses": 4,
+    "final_online_state": {
+      "epoch": 0,
+      "requestCount": 12,
+      "completedBoundaryRequestCounts": [
+        8
+      ],
+      "lastContextTokens": 31006,
+      "positiveContextDeltaTotal": 29237,
+      "positiveContextDeltaCount": 8,
+      "nativeCompactionCount": 0,
+      "cacheDebtTokens": 0,
+      "cacheDebtRepaymentTokens": 0
+    },
+    "peak_provider_context_tokens": 30905,
+    "large_bash_output_files": 0
+  },
+  {
+    "job": "luna-bottle-plan-valid-2-retry1",
+    "trial": "fix-code-vulnerability__vzsGrP5",
+    "reward": 1.0,
+    "exception": null,
+    "requests": 17,
+    "input": 63691,
+    "cacheRead": 181248,
+    "cacheWrite": 0,
+    "output": 3699,
+    "configured_price_usd": 0.1040098,
+    "api_price_equivalent_usd": 0.020801959999999998,
+    "by_stage": {
+      "main": {
+        "requests": 11,
+        "input": 31287,
+        "cacheRead": 147456,
+        "cacheWrite": 0,
+        "output": 2707
+      },
+      "observer": {
+        "requests": 4,
+        "input": 30200,
+        "cacheRead": 22528,
+        "cacheWrite": 0,
+        "output": 722
+      },
+      "reflector": {
+        "requests": 2,
+        "input": 2204,
+        "cacheRead": 11264,
+        "cacheWrite": 0,
+        "output": 270
+      }
+    },
+    "arm": "plan",
+    "elapsed_sec": 118.94857141596731,
+    "exit_code": 0,
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": false,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": false,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09a9a-3fd7-71a1-9061-f8e037e1cc72"
+    },
+    "tool_counts": {
+      "update_plan": 4,
+      "bash": 17,
+      "edit": 1,
+      "write": 1
+    },
+    "plan_updates": 4,
+    "completed_plan_boundaries": 3,
+    "compactions": 0,
+    "compaction_failures": 0,
+    "packed_objects": 0,
+    "placeholder_replays": 0,
+    "estimated_replay_tokens_avoided": 0,
+    "pack_recalls": 0,
+    "worker_errors": 0,
+    "worker_error_kinds": {},
+    "main_error_responses": 0,
+    "final_online_state": {
+      "epoch": 0,
+      "requestCount": 11,
+      "completedBoundaryRequestCounts": [
+        5,
+        2,
+        3
+      ],
+      "lastContextTokens": 25644,
+      "positiveContextDeltaTotal": 23875,
+      "positiveContextDeltaCount": 10,
+      "nativeCompactionCount": 0,
+      "cacheDebtTokens": 0,
+      "cacheDebtRepaymentTokens": 0
+    },
+    "peak_provider_context_tokens": 25745,
+    "large_bash_output_files": 0
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "model_and_worker_config_invariants": "passed across all 12 final/replacement attempts",
+  "om_tests": {
+    "files": 29,
+    "passed": 271
+  },
+  "om_typecheck": "passed",
+  "sol_pi_locked_runtime": "0.84.2",
+  "sol_pi_tests": {
+    "files": 18,
+    "passed": 139
+  },
+  "sol_pi_check": "typecheck, tests, package inspection passed",
+  "sol_pi_public_api_check": "passed",
+  "sol_pi_all_mechanisms_subset": {
+    "passed": 4
+  },
+  "sol_pi_audit_high": "passed; 2 moderate development dependency advisories",
+  "benchmark_adapter_typecheck": "passed against local Pi 0.85.1 declarations",
+  "benchmark_python_compile": "passed",
+  "oracle_reward": 1.0,
+  "implementation_commit": "34281a1"
+}

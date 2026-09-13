@@ -1,0 +1,13 @@
+job,arm,reward,infrastructure_interrupted,configured_price_usd,api_price_equivalent_usd,input,cacheRead,output,elapsed_sec,plan_updates,completed_plan_boundaries,compactions,packed_objects,placeholder_replays,estimated_replay_tokens_avoided,pack_recalls,worker_errors,valid_tools,workers_drained
+luna-bottle-baseline-valid-1,baseline,1.0,False,0.14267539999999998,0.02853508,91971,249344,4295,108.47564591700211,5,3,0,0,0,0,0,1,True,True
+luna-bottle-baseline-valid-2,baseline,1.0,False,0.10625959999999998,0.02125192,62966,208896,3734,121.19177595799556,4,3,0,0,0,0,0,5,True,True
+luna-bottle-combined-valid-1,combined,1.0,False,0.12421399999999999,0.024842799999999998,79306,202240,4114,126.74772320804186,4,3,0,2,14,39776,0,0,True,True
+luna-bottle-combined-valid-2,combined,1.0,False,0.16112519999999997,0.03222504,129168,102912,3611,105.81452441599686,4,3,0,4,25,104816,0,4,True,True
+luna-bottle-original-valid-1,original,1.0,False,0.12038479999999999,0.02407696,88230,140288,3021,94.65388829202857,0,0,0,0,0,0,0,0,True,True
+luna-bottle-original-valid-2,original,1.0,False,0.13773860000000002,0.02754772,104343,129536,3407,141.1401205409784,0,0,0,0,0,0,0,0,True,True
+luna-bottle-pack-valid-1,pack,1.0,False,0.10439860000000001,0.02087972,69721,139776,3450,110.11843120900448,4,3,0,2,18,62307,0,1,True,True
+luna-bottle-pack-valid-2,pack,0.0,True,0.1318648,0.026372960000000004,108274,81408,2575,90.99923299998045,2,1,0,3,19,57815,0,0,True,True
+luna-bottle-pack-valid-2-retry1,pack,0.0,False,0.1463932,0.029278639999999998,109246,148992,3708,124.17728541698307,4,3,0,3,15,63849,0,0,True,True
+luna-bottle-plan-valid-1,plan,0.0,False,0.1725596,0.03451192,113454,313856,4620,146.91075320902746,3,2,0,0,0,0,0,1,True,True
+luna-bottle-plan-valid-2,plan,1.0,True,0.1286078,0.025721560000000004,93697,153088,3267,93.41729120799573,2,1,0,0,0,0,0,8,True,True
+luna-bottle-plan-valid-2-retry1,plan,1.0,False,0.1040098,0.020801959999999998,63691,181248,3699,118.94857141596731,4,3,0,0,0,0,0,0,True,True

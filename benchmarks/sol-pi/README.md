@@ -1,5 +1,7 @@
 # OM + SoL-Pi experiment
 
+The completed pilot is recorded in [the September 13, 2026 report](results/2026-09-13/report.md), with per-attempt CSV/JSON and validation evidence. It did not establish that the combined approach reduces cost; no main-context compaction occurred in the selected task.
+
 This experiment keeps Observer, Reflector and Dropper at OM's defaults. It compares:
 
 | Arm | OM source-token trigger | SoL-Pi Online Context Compact | ObservationPack |
