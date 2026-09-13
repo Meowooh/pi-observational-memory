@@ -1,0 +1,4 @@
+job,arm,reward,exception,infrastructure_interrupted,configured_price_usd,api_price_equivalent_usd,input,cacheRead,output,elapsed_sec,plan_updates,completed_plan_boundaries,compactions,successful_main_responses_after_first_compaction,packed_objects,placeholder_replays,estimated_replay_tokens_avoided,pack_recalls,worker_errors,main_non_abort_error_responses,valid_tools,workers_drained
+luna-mips-baseline-valid-1,baseline,0.0,,False,1.0547780000000002,0.21095560000000005,391864,4986880,27371,1539.4786790420185,3,2,0,,0,0,0,0,0,2,True,True
+luna-mips-combined-valid-1,combined,0.0,AgentTimeoutError,False,0.8971168000000003,0.17942336,401358,3332608,27083,1800.0206421249895,2,1,0,,6,435,2041545,0,0,2,True,True
+luna-mips-plan-valid-1,plan,0.0,,False,0.6454222000000001,0.12908444,327581,1889792,21477,1585.9551504999981,4,2,1,47,0,0,0,0,0,0,True,True

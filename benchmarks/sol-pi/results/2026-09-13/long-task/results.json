@@ -1,0 +1,308 @@
+[
+  {
+    "job": "luna-mips-baseline-valid-1",
+    "trial": "make-mips-interpreter__KdCwEEP",
+    "reward": 0.0,
+    "exception": null,
+    "requests": 95,
+    "input": 391864,
+    "cacheRead": 4986880,
+    "cacheWrite": 0,
+    "output": 27371,
+    "configured_price_usd": 1.0547780000000002,
+    "api_price_equivalent_usd": 0.21095560000000005,
+    "by_stage": {
+      "main": {
+        "requests": 70,
+        "input": 146498,
+        "cacheRead": 4851712,
+        "cacheWrite": 0,
+        "output": 22077
+      },
+      "observer": {
+        "requests": 14,
+        "input": 210188,
+        "cacheRead": 78848,
+        "cacheWrite": 0,
+        "output": 3496
+      },
+      "reflector": {
+        "requests": 11,
+        "input": 35178,
+        "cacheRead": 56320,
+        "cacheWrite": 0,
+        "output": 1798
+      }
+    },
+    "arm": "baseline",
+    "elapsed_sec": 1539.4786790420185,
+    "exit_code": 0,
+    "configured_price_usd_by_stage": {
+      "main": 0.7641311999999999,
+      "observer": 0.23904879999999992,
+      "reflector": 0.051598000000000005
+    },
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": false,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": true,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09ab4-ee9c-756d-a04d-e326f9f95cae"
+    },
+    "tool_counts": {
+      "update_plan": 3,
+      "bash": 56,
+      "write": 1,
+      "edit": 20
+    },
+    "plan_updates": 3,
+    "completed_plan_boundaries": 2,
+    "compactions": 0,
+    "compaction_failures": 0,
+    "compaction_reasons": {},
+    "extension_summaries": 0,
+    "compaction_summary_estimated_tokens": [],
+    "successful_main_responses_after_first_compaction": null,
+    "packed_objects": 0,
+    "placeholder_replays": 0,
+    "estimated_replay_tokens_avoided": 0,
+    "pack_recalls": 0,
+    "worker_errors": 0,
+    "worker_error_kinds": {},
+    "main_error_responses": 2,
+    "main_abort_error_responses": 0,
+    "main_non_abort_error_responses": 2,
+    "final_online_state": null,
+    "peak_provider_context_tokens": 98205,
+    "large_bash_output_files": 0
+  },
+  {
+    "job": "luna-mips-combined-valid-1",
+    "trial": "make-mips-interpreter__oHcAhbV",
+    "reward": 0.0,
+    "exception": "AgentTimeoutError",
+    "requests": 102,
+    "input": 401358,
+    "cacheRead": 3332608,
+    "cacheWrite": 0,
+    "output": 27083,
+    "configured_price_usd": 0.8971168000000003,
+    "api_price_equivalent_usd": 0.17942336,
+    "by_stage": {
+      "main": {
+        "requests": 85,
+        "input": 192468,
+        "cacheRead": 3246080,
+        "cacheWrite": 0,
+        "output": 23148
+      },
+      "observer": {
+        "requests": 9,
+        "input": 186721,
+        "cacheRead": 45056,
+        "cacheWrite": 0,
+        "output": 2614
+      },
+      "reflector": {
+        "requests": 8,
+        "input": 22169,
+        "cacheRead": 41472,
+        "cacheWrite": 0,
+        "output": 1321
+      }
+    },
+    "arm": "combined",
+    "elapsed_sec": 1800.0206421249895,
+    "exit_code": -15,
+    "configured_price_usd_by_stage": {
+      "main": 0.6559640000000003,
+      "observer": 0.20691059999999997,
+      "reflector": 0.034242199999999993
+    },
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": false,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": false,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09ae6-5b35-72bf-8190-2b220d5461eb"
+    },
+    "tool_counts": {
+      "update_plan": 2,
+      "bash": 69,
+      "write": 1,
+      "edit": 23
+    },
+    "plan_updates": 2,
+    "completed_plan_boundaries": 1,
+    "compactions": 0,
+    "compaction_failures": 0,
+    "compaction_reasons": {},
+    "extension_summaries": 0,
+    "compaction_summary_estimated_tokens": [],
+    "successful_main_responses_after_first_compaction": null,
+    "packed_objects": 6,
+    "placeholder_replays": 435,
+    "estimated_replay_tokens_avoided": 2041545,
+    "pack_recalls": 0,
+    "worker_errors": 0,
+    "worker_error_kinds": {},
+    "main_error_responses": 2,
+    "main_abort_error_responses": 0,
+    "main_non_abort_error_responses": 2,
+    "final_online_state": {
+      "epoch": 0,
+      "requestCount": 85,
+      "completedBoundaryRequestCounts": [
+        10
+      ],
+      "lastContextTokens": 60069,
+      "positiveContextDeltaTotal": 87447,
+      "positiveContextDeltaCount": 77,
+      "nativeCompactionCount": 0,
+      "cacheDebtTokens": 0,
+      "cacheDebtRepaymentTokens": 0
+    },
+    "peak_provider_context_tokens": 60220,
+    "large_bash_output_files": 5
+  },
+  {
+    "job": "luna-mips-plan-valid-1",
+    "trial": "make-mips-interpreter__cApfRPR",
+    "reward": 0.0,
+    "exception": null,
+    "requests": 68,
+    "input": 327581,
+    "cacheRead": 1889792,
+    "cacheWrite": 0,
+    "output": 21477,
+    "configured_price_usd": 0.6454222000000001,
+    "api_price_equivalent_usd": 0.12908444,
+    "by_stage": {
+      "main": {
+        "requests": 55,
+        "input": 179051,
+        "cacheRead": 1816576,
+        "cacheWrite": 0,
+        "output": 18008
+      },
+      "observer": {
+        "requests": 9,
+        "input": 141528,
+        "cacheRead": 50688,
+        "cacheWrite": 0,
+        "output": 2744
+      },
+      "reflector": {
+        "requests": 4,
+        "input": 7002,
+        "cacheRead": 22528,
+        "cacheWrite": 0,
+        "output": 725
+      }
+    },
+    "arm": "plan",
+    "elapsed_sec": 1585.9551504999981,
+    "exit_code": 0,
+    "configured_price_usd_by_stage": {
+      "main": 0.46875659999999997,
+      "observer": 0.1630608,
+      "reflector": 0.0136048,
+      "native_summary": 0
+    },
+    "valid_tools": true,
+    "workers_drained": true,
+    "infrastructure_interrupted": false,
+    "configuration": {
+      "config": {
+        "observeAfterTokens": 10000,
+        "reflectAfterTokens": 20000,
+        "proactiveCompaction": false,
+        "compactAfterTokens": 81000,
+        "compactAfterTokensMode": "calibrated",
+        "compactAfterTokensRatio": 0.68,
+        "observationsPoolMaxTokens": 20000,
+        "observationsPoolTargetTokens": 10000,
+        "agentMaxTurns": 16,
+        "showWorkerNotifications": true,
+        "passive": false,
+        "debugLog": true
+      },
+      "model": "gpt-5.6-luna",
+      "provider": "pingcap",
+      "sessionId": "01a09acd-7d4b-7630-87a1-b97441b24cda"
+    },
+    "tool_counts": {
+      "update_plan": 4,
+      "bash": 48,
+      "write": 1,
+      "edit": 16
+    },
+    "plan_updates": 4,
+    "completed_plan_boundaries": 2,
+    "compactions": 1,
+    "compaction_failures": 0,
+    "compaction_reasons": {
+      "manual": 1
+    },
+    "extension_summaries": 1,
+    "compaction_summary_estimated_tokens": [
+      661
+    ],
+    "successful_main_responses_after_first_compaction": 47,
+    "packed_objects": 0,
+    "placeholder_replays": 0,
+    "estimated_replay_tokens_avoided": 0,
+    "pack_recalls": 0,
+    "worker_errors": 0,
+    "worker_error_kinds": {},
+    "main_error_responses": 1,
+    "main_abort_error_responses": 1,
+    "main_non_abort_error_responses": 0,
+    "final_online_state": {
+      "epoch": 1,
+      "requestCount": 54,
+      "completedBoundaryRequestCounts": [
+        7,
+        46
+      ],
+      "lastContextTokens": 49300,
+      "positiveContextDeltaTotal": 32365,
+      "positiveContextDeltaCount": 46,
+      "nativeCompactionCount": 1,
+      "cacheDebtTokens": 0,
+      "cacheDebtRepaymentTokens": 0
+    },
+    "peak_provider_context_tokens": 49571,
+    "large_bash_output_files": 0
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "model_and_worker_configuration_invariants": "passed across all 3 long-task attempts",
+  "stage_cost_reconciliation": "passed across all 3 attempts",
+  "workers_drained": "all 3 attempts, including timeout",
+  "timeout_private_vs_copied_usage": "equal cost and request counts; both contain shutdown.drained",
+  "rtk_sigterm_forwarding": "confirmed with an isolated non-model subprocess",
+  "task_and_sol_pi_checkouts": "pinned revisions; clean working trees",
+  "oracle_reward": 1,
+  "oracle_checks_passed": 3,
+  "benchmark_python_compile": "passed",
+  "om_core_implementation_commit": "34281a1",
+  "om_core_tests": "Previously passed: 29 files / 271 tests; core unchanged during long check",
+  "sol_pi_tests": "Previously passed: 18 files / 139 tests on locked Pi 0.84.2; upstream source unchanged"
+}

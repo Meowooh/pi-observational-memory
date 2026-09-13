@@ -1,0 +1,68 @@
+{
+  "scope": "MIPS exposure check; separate from Bottle pilot",
+  "attempts": 3,
+  "task_passes": 0,
+  "timeouts": 1,
+  "plan_cost_change_vs_matched_control_percent": -38.80966421370184,
+  "combined_cost_change_vs_plan_percent": 38.99689226679841,
+  "recorded_long_task_cost_usd": 2.5973170000000003,
+  "recorded_pi_experiment_cost_usd_including_bottle_calibration": 4.5233274,
+  "cost_basis": "Pi configured prices applied to reported usage; not a verified invoice",
+  "groups": {
+    "baseline": {
+      "reward": 0.0,
+      "exception": null,
+      "configured_price_usd": 1.0547780000000002,
+      "configured_price_usd_by_stage": {
+        "main": 0.7641311999999999,
+        "observer": 0.23904879999999992,
+        "reflector": 0.051598000000000005
+      },
+      "elapsed_sec": 1539.4786790420185,
+      "compactions": 0,
+      "successful_main_responses_after_first_compaction": null,
+      "packed_objects": 0,
+      "placeholder_replays": 0,
+      "estimated_replay_tokens_avoided": 0,
+      "pack_recalls": 0,
+      "peak_provider_context_tokens": 98205
+    },
+    "combined": {
+      "reward": 0.0,
+      "exception": "AgentTimeoutError",
+      "configured_price_usd": 0.8971168000000003,
+      "configured_price_usd_by_stage": {
+        "main": 0.6559640000000003,
+        "observer": 0.20691059999999997,
+        "reflector": 0.034242199999999993
+      },
+      "elapsed_sec": 1800.0206421249895,
+      "compactions": 0,
+      "successful_main_responses_after_first_compaction": null,
+      "packed_objects": 6,
+      "placeholder_replays": 435,
+      "estimated_replay_tokens_avoided": 2041545,
+      "pack_recalls": 0,
+      "peak_provider_context_tokens": 60220
+    },
+    "plan": {
+      "reward": 0.0,
+      "exception": null,
+      "configured_price_usd": 0.6454222000000001,
+      "configured_price_usd_by_stage": {
+        "main": 0.46875659999999997,
+        "observer": 0.1630608,
+        "reflector": 0.0136048,
+        "native_summary": 0
+      },
+      "elapsed_sec": 1585.9551504999981,
+      "compactions": 1,
+      "successful_main_responses_after_first_compaction": 47,
+      "packed_objects": 0,
+      "placeholder_replays": 0,
+      "estimated_replay_tokens_avoided": 0,
+      "pack_recalls": 0,
+      "peak_provider_context_tokens": 49571
+    }
+  }
+}

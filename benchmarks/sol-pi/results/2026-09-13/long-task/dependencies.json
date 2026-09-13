@@ -1,0 +1,14 @@
+{
+  "uv-0.9.5-linux.tar.gz": {
+    "url": "https://github.com/astral-sh/uv/releases/download/0.9.5/uv-x86_64-unknown-linux-gnu.tar.gz",
+    "version": "0.9.5",
+    "sha256": "2cf10babba653310606f8b49876cfb679928669e7ddaa1fb41fb00ce73e64f66",
+    "bytes": 21370871
+  },
+  "python-3.13-linux.tar.gz": {
+    "url": "https://releases.astral.sh/github/python-build-standalone/releases/download/20260623/cpython-3.13.14%2B20260623-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+    "version": "3.13.14",
+    "sha256": "459ed79967acc207bef2ff5124dac35d74d5108528e37b15395d14e2922f2c92",
+    "bytes": 34974241
+  }
+}

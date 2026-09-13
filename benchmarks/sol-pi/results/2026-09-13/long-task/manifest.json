@@ -1,0 +1,47 @@
+{
+  "benchmark": "Terminal-Bench 2.0",
+  "task_commit": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+  "om_commit": "9f1cf4e2eeecd5bd1c49b8017d818e7cd07b65a0",
+  "sol_pi_commit": "d7ecfc089944f0d04b80122a0a9a6ca0d786f3d0",
+  "pi_version": "0.85.1",
+  "harbor_version": "0.23.0",
+  "model": "pingcap/gpt-5.6-luna",
+  "main_thinking": "medium",
+  "economic_ratio": 12.5,
+  "summary_estimate_tokens": 1000,
+  "observation_pack": "upstream defaults: >10 KiB; 2 full sends; 1 KiB placeholder",
+  "cost": "Pi configured prices and OpenAI Standard API equivalent; neither is a verified invoice",
+  "task": "make-mips-interpreter",
+  "reason": "First task never reached compaction; select a longer original task to exercise plan-boundary compaction without lowering thresholds.",
+  "arms": [
+    "baseline",
+    "plan",
+    "combined"
+  ],
+  "repetitions": 1,
+  "concurrency": 1,
+  "agent_timeout_sec": 1800,
+  "rules": [
+    "Run original oracle first; proceed only if verifier passes.",
+    "Keep Observer, Reflector, Dropper and both compaction owners at their default thresholds.",
+    "Retain all scored quality failures.",
+    "Allow at most one replacement per final provider interruption; do not replace timeouts or quality failures.",
+    "Report separately from Bottle pilot; no pooled percentage claim."
+  ],
+  "worker_thinking": "low",
+  "oracle_retry_reason": "Verifier failed downloading uv 0.9.5 from GitHub release assets; no solution tests ran. Retry original container and verifier unchanged once.",
+  "dependency_preparation": "Both untouched oracle attempts failed downloading uv from GitHub. Preinstall same uv 0.9.5 and Python 3.13.14 archives on oracle and all model arms, leaving original task, image, reference solution and verifier unchanged. See dependencies.json.",
+  "image": "alexgshaw/make-mips-interpreter@sha256:082fc8821b317f30fdfbf8d08d528874ce331c03e8083aef0406d48cdd7132a2",
+  "oracle_reward": 1.0,
+  "oracle_tests_passed": 3,
+  "prepared_oracle_job": "luna-mips-oracle-prepared-3",
+  "preparation_calibration": [
+    "First custom oracle setup lacked Harbor task metadata; corrected before tests or model calls.",
+    "Container already contained /usr/local/bin/python3.13; use the isolated dependency bin directory instead."
+  ],
+  "om_implementation_commit": "34281a1",
+  "execution_harness_commit": "5f1c2a66daedc6eedb1863219d23d3598f8f3096",
+  "analysis_commit": "d16ad908aefd7380c9444bca5d58cde16737be80",
+  "worker_configuration": "Unchanged OM defaults; main model medium reasoning, workers default low reasoning",
+  "outcome_note": "All three task rewards are 0. Combined reached the agent timeout; retain it and do not replace it. Costs are not successful-task cost comparisons."
+}

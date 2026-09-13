@@ -1,6 +1,6 @@
 # OM + SoL-Pi experiment
 
-The completed pilot is recorded in [the September 13, 2026 report](results/2026-09-13/report.md), with per-attempt CSV/JSON and validation evidence. It did not establish that the combined approach reduces cost; no main-context compaction occurred in the selected task.
+The completed experiment is recorded in [the September 13, 2026 report](results/2026-09-13/report.md), with per-attempt CSV/JSON and validation evidence. The initial Bottle pilot did not compact. A separate MIPS check exercised one plan-triggered compaction and continued for 47 successful model responses, but none of its three task attempts passed. Stable cost reduction from the combined approach was not established.
 
 This experiment keeps Observer, Reflector and Dropper at OM's defaults. It compares:
 
@@ -56,3 +56,5 @@ The manifest records task selection, failed infrastructure calibration and the d
 Use the same `--workspace`, `--sol-root`, `--tasks-root`, `--auth-source`, and `--provider` arguments as above. `--oracle-job` can point to an already completed reference-solution job. The analyzer accepts `--pattern 'luna-mips-*-valid-*/*/result.json'` for this separate dataset.
 
 The live Docker environment could not download GitHub release assets. The optional `--verifier-dependencies` directory contains `dependencies.json` and its two named archives: uv 0.9.5 and standalone Python 3.13.14. `verifier_dependencies.py` verifies their SHA-256 hashes and installs them before both reference and model runs. The original task instructions, reference solution, and test scripts remain unchanged. This environment preparation must be disclosed with the results and applied to every arm. Dependency preparation is outside model runtime and incurs no model calls.
+
+Copy the published [dependency manifest](results/2026-09-13/long-task/dependencies.json) into that directory and download each listed URL under its manifest filename. The [long-task manifest](results/2026-09-13/long-task/manifest.json) records the prepared oracle, fixed versions, and timeout policy. The combined trial reached 30 minutes and remains a failed, timed-out task attempt; its recorded cost is not a successful-task cost.
