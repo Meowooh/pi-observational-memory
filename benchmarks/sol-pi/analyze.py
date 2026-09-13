@@ -31,12 +31,24 @@ def summarize(trial):
     worker_errors = [r for r in debug if r["event"].endswith(".stream_error")]
     events = Counter(r["event"] for r in meter)
     main_responses = [r["data"] for r in meter if r["event"] == "main.usage"]
+    compaction_rows = [r for r in meter if r["event"] == "compaction.complete"]
+    first_compaction_index = next((i for i, r in enumerate(meter) if r["event"] == "compaction.complete"), None)
+    stage_costs = Counter()
+    for response in main_responses:
+        stage_costs["main"] += response.get("usage", {}).get("cost", {}).get("total", 0)
+    for row in debug:
+        if row["event"] == "worker.usage":
+            data = row["data"]
+            stage_costs[data["stage"]] += data.get("usage", {}).get("cost", {}).get("total", 0)
+    for row in compaction_rows:
+        stage_costs["native_summary"] += (row["data"]["compactionEntry"].get("usage") or {}).get("cost", {}).get("total", 0)
     return {
         "job": trial.parent.name,
         "trial": trial.name,
         "reward": (result.get("verifier_result") or {}).get("rewards", {}).get("reward"),
         "exception": (result.get("exception_info") or {}).get("exception_type"),
         **usage,
+        "configured_price_usd_by_stage": dict(stage_costs),
         "valid_tools": valid_tools,
         "workers_drained": events["shutdown.drained"] > 0,
         "infrastructure_interrupted": not main_responses or main_responses[-1].get("stopReason") == "error",
@@ -46,6 +58,10 @@ def summarize(trial):
         "completed_plan_boundaries": plan_boundaries,
         "compactions": events["compaction.complete"],
         "compaction_failures": events["compaction.failed"],
+        "compaction_reasons": dict(Counter(r["data"].get("reason") for r in compaction_rows)),
+        "extension_summaries": sum(bool(r["data"].get("fromExtension")) for r in compaction_rows),
+        "compaction_summary_estimated_tokens": [(len(r["data"]["compactionEntry"]["summary"].encode("utf-8")) + 3) // 4 for r in compaction_rows],
+        "successful_main_responses_after_first_compaction": sum(r["event"] == "main.usage" and r["data"].get("stopReason") not in ("error", "aborted") for r in meter[first_compaction_index + 1:]) if first_compaction_index is not None else None,
         "packed_objects": len({r["id"] for r in pack if r["event"] == "placeholder"}),
         "placeholder_replays": sum(r["event"] == "placeholder" for r in pack),
         "estimated_replay_tokens_avoided": sum(r.get("removedTokens", 0) for r in pack),
@@ -63,8 +79,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("jobs", type=Path)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--pattern", default="luna-bottle-*-valid-*/*/result.json")
     args = parser.parse_args()
-    reports = [summarize(p.parent) for p in sorted(args.jobs.glob("luna-bottle-*-valid-*/*/result.json")) if (p.parent / "agent/usage.json").exists()]
+    reports = [summarize(p.parent) for p in sorted(args.jobs.glob(args.pattern)) if (p.parent / "agent/usage.json").exists()]
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "results.json").write_text(json.dumps(reports, indent=2) + "\n")
     columns = ["job", "arm", "reward", "infrastructure_interrupted", "configured_price_usd", "api_price_equivalent_usd", "input", "cacheRead", "output", "elapsed_sec", "plan_updates", "completed_plan_boundaries", "compactions", "packed_objects", "placeholder_replays", "estimated_replay_tokens_avoided", "pack_recalls", "worker_errors", "valid_tools", "workers_drained"]

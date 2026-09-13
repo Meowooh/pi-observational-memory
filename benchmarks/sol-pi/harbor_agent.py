@@ -71,6 +71,8 @@ class PiMemoryAgent(BaseAgent):
         return "0.85.1"
 
     async def setup(self, environment):
+        from verifier_dependencies import prepare_verifier_dependencies
+        await prepare_verifier_dependencies(environment)
         # Pinned to Harbor 0.23; no credentials or host workspace are mounted.
         result = await environment._run_docker_compose_command(["ps", "-q", "main"])
         self.container = result.stdout.strip()

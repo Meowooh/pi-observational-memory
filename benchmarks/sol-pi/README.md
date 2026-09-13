@@ -46,3 +46,11 @@ The economic gate retains SoL-Pi's default write/read ratio of 12.5 and its 1,00
 The manifest records task selection, failed infrastructure calibration and the decision to repeat every arm. A single task with two repetitions is a pilot, not a Terminal-Bench leaderboard score or a statistically reliable estimate of general savings. Report actual plan, compaction, packing and recall exposure alongside costs. A mechanism that never executes has not demonstrated a benefit.
 
 `infrastructure_interrupted` marks attempts ending in an unrecovered provider error, even if the verifier happens to pass because required files were written earlier. Keep their spent tokens and costs in the raw results, but exclude them from completion/cost comparisons. The live experiment allows one serial replacement of each interrupted second repetition; task-quality failures are retained and are never rerun to obtain a passing score. Soft background-worker errors are recorded and remain a limitation of otherwise completed trials.
+
+## Longer-task exposure check
+
+`run_long_task.py` separately runs the original Terminal-Bench `make-mips-interpreter` task. It first requires a passing official reference solution, then runs `baseline`, `plan`, and `combined` once each, serially. It permits one replacement after a final provider interruption, retaining quality failures and timeouts. Worker thresholds and SoL-Pi economics are unchanged. Results must be reported separately from the Bottle pilot.
+
+Use the same `--workspace`, `--sol-root`, `--tasks-root`, `--auth-source`, and `--provider` arguments as above. `--oracle-job` can point to an already completed reference-solution job. The analyzer accepts `--pattern 'luna-mips-*-valid-*/*/result.json'` for this separate dataset.
+
+The live Docker environment could not download GitHub release assets. The optional `--verifier-dependencies` directory contains `dependencies.json` and its two named archives: uv 0.9.5 and standalone Python 3.13.14. `verifier_dependencies.py` verifies their SHA-256 hashes and installs them before both reference and model runs. The original task instructions, reference solution, and test scripts remain unchanged. This environment preparation must be disclosed with the results and applied to every arm. Dependency preparation is outside model runtime and incurs no model calls.
