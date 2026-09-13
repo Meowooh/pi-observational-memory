@@ -48,6 +48,7 @@ function setup(args: {
 	observationsPoolTargetTokens?: number;
 	showWorkerNotifications?: boolean;
 	passive?: boolean;
+	proactiveCompaction?: boolean;
 	consolidationInFlight?: boolean;
 	appendEntryReturnsId?: boolean;
 	sessionId?: string;
@@ -70,6 +71,7 @@ function setup(args: {
 		config: {
 			showWorkerNotifications: args.showWorkerNotifications ?? true,
 			passive: args.passive ?? false,
+			proactiveCompaction: args.proactiveCompaction ?? true,
 			debugLog: false,
 			observeAfterTokens: args.observeAfterTokens ?? 1,
 			reflectAfterTokens: args.reflectAfterTokens ?? 1,
@@ -169,6 +171,22 @@ describe("V3 consolidation trigger", () => {
 		passive.fireTurnEnd();
 
 		expect(passive.runtime.launchConsolidationTask).not.toHaveBeenCalled();
+	});
+
+	it("keeps all three due workers active when external compaction owns the trigger", async () => {
+		mockAgents.runObserver.mockResolvedValueOnce([obsA]);
+		mockAgents.runReflector.mockResolvedValueOnce([refA]);
+		mockAgents.runDropper.mockResolvedValueOnce([obsA.id]);
+		const run = setup({
+			entries: [textCustomMessage("raw-1", "aaaaaaaa")],
+			proactiveCompaction: false,
+			observationsPoolTargetTokens: 1,
+		});
+		run.fireTurnEnd();
+		await run.runLaunchedWork();
+		expect(mockAgents.runObserver).toHaveBeenCalledTimes(1);
+		expect(mockAgents.runReflector).toHaveBeenCalledTimes(1);
+		expect(mockAgents.runDropper).toHaveBeenCalledTimes(1);
 	});
 
 	it("does not launch from either entrypoint while consolidation is already in flight", () => {

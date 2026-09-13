@@ -209,6 +209,7 @@ A typical config:
   "observational-memory": {
     "observeAfterTokens": 10000,
     "reflectAfterTokens": 20000,
+    "proactiveCompaction": true,
     "compactAfterTokens": 81000,
     "compactAfterTokensMode": "calibrated",
     "compactAfterTokensRatio": 0.68,
@@ -277,6 +278,7 @@ on the `Next compaction` line regardless of mode.
 | `observerChunkMaxTokens`    | derived       | Max estimated tokens serialized into one observer chunk (minimum `256`). Unset: `floor(contextWindow * 0.2)` of the resolved memory model, or `60000` when the window is unknown. Larger backlogs drain oldest-first; a single over-budget source is sent as a marked head/tail excerpt while the original source remains in the session ledger. |
 | `reflectAfterTokens`        | `20000`       | Raw/source token threshold for reflection runs; successful reflection creates dropper opportunities. |
 | `compactAfterTokens`        | `81000`       | Estimated source-entry threshold for proactive auto-compaction, counted after the latest compaction boundary. |
+| `proactiveCompaction`       | `true`        | Set to `false` when another extension owns proactive compaction. Observer, Reflector, Dropper, OM summary rendering, and manual/Pi compaction stay active. |
 | `compactAfterTokensMode`    | `"calibrated"`| `"calibrated"` uses `compactAfterTokens` directly. `"ratio"` scales the source-entry threshold by the active model's `contextWindow`. |
 | `compactAfterTokensRatio`   | `0.68`        | In `"ratio"` mode, the threshold is `floor(contextWindow * ratio)`. Tunable because large windows do not always mean strong long-range attention. Must be in `(0, 1)`. |
 | `observationsPoolMaxTokens` | `20000`       | Observation-token budget used for compaction full-fold pressure.                                  |
@@ -306,6 +308,8 @@ Set `showWorkerNotifications` to `false` to hide routine worker start and comple
 Dropper pruning balances age, relevance, and reflection coverage. Relevance is importance/resistance, not a permanent active-memory pin: `critical` observations require the strongest evidence but can be dropped when they are older and safely represented by reflections, superseded by newer memory, redundant, or obsolete. Dropper input annotates each active observation with deterministic coverage evidence: `none`, `partial`, or `strong`; coverage guides model judgment and is not an automatic drop rule. Dropping removes observations from active memory, not ledger history.
 
 When `debugLog` is enabled, debug events are written as local NDJSON files under Pi's agent directory. Normal sessions write to `observational-memory/debug/<session-id>.ndjson`; contexts without a session id fall back to `observational-memory/debug.ndjson`. Debug rows include `sessionId` and per-consolidation `runId`, so a session file can still be filtered to one observer/reflector/dropper run.
+
+`worker.usage` events record model/provider, stage and provider-reported token usage once per background response, including tool-call responses. These can be combined with foreground usage to measure the full cost of memory. See [`benchmarks/sol-pi`](benchmarks/sol-pi/README.md) for an experiment that keeps worker defaults while delegating proactive compaction and optionally packing large tool results.
 
 For details and tuning guidance, see [`docs/configuration.md`](docs/configuration.md).
 

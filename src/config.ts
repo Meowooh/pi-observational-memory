@@ -39,6 +39,8 @@ export interface Config {
 	 * window; see {@link resolveObserverChunkMaxTokens}.
 	 */
 	observerChunkMaxTokens?: number;
+	/** Allow OM to request compaction at its source-token threshold. */
+	proactiveCompaction: boolean;
 	compactAfterTokens: number;
 	compactAfterTokensMode: CompactAfterTokensMode;
 	compactAfterTokensRatio: number;
@@ -54,6 +56,7 @@ export interface Config {
 export const DEFAULTS: Config = {
 	observeAfterTokens: 10_000,
 	reflectAfterTokens: 20_000,
+	proactiveCompaction: true,
 	compactAfterTokens: 81_000,
 	compactAfterTokensMode: "calibrated",
 	compactAfterTokensRatio: 0.68,
@@ -201,6 +204,7 @@ function normalizeSettingsConfig(value: Record<string, unknown>): Partial<Config
 	if (ratio !== undefined) normalized.compactAfterTokensRatio = ratio;
 	if (typeof value.showWorkerNotifications === "boolean") normalized.showWorkerNotifications = value.showWorkerNotifications;
 	if (typeof value.passive === "boolean") normalized.passive = value.passive;
+	if (typeof value.proactiveCompaction === "boolean") normalized.proactiveCompaction = value.proactiveCompaction;
 	if (typeof value.debugLog === "boolean") normalized.debugLog = value.debugLog;
 	const model = normalizeModel(value.model);
 	if (model) normalized.model = model;

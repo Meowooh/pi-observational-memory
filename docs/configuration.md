@@ -33,6 +33,7 @@ The extension loads config once for its runtime. After changing settings, restar
     "reflectAfterTokens": 20000,
     "observerChunkMaxTokens": 60000,
     "compactAfterTokens": 81000,
+    "proactiveCompaction": true,
     "observationsPoolMaxTokens": 20000,
     "observationsPoolTargetTokens": 10000,
     "agentMaxTurns": 16,
@@ -58,6 +59,7 @@ You can omit everything. Defaults work for ordinary sessions, and if `model` is 
 | `reflectAfterTokens` | positive integer | `20000` | Raw/source token threshold for reflector runs; successful reflection creates dropper maintenance opportunities. |
 | `observerChunkMaxTokens` | positive integer | derived; minimum `256` | Maximum estimated tokens sent to one observer run. Unset: 20% of the resolved memory model's context window, or `60000` when unknown. |
 | `compactAfterTokens` | positive integer | `81000` | Estimated source-entry threshold for proactive auto-compaction, counted after the latest compaction boundary. |
+| `proactiveCompaction` | boolean | `true` | Enables OM's source-token compaction trigger. Set to `false` for an external compaction owner while keeping background workers active. |
 | `observationsPoolMaxTokens` | positive integer | `20000` | Normal compaction-projection observation-token pressure that makes compaction do a full fold. |
 | `observationsPoolTargetTokens` | positive integer below max | half of `observationsPoolMaxTokens` | Folded active observation target used by post-reflection dropper maintenance. |
 | `agentMaxTurns` | positive integer | `16` | Shared nested-agent turn cap for observer, reflector, and dropper. |
@@ -100,6 +102,8 @@ The dropper no longer uses `reflectAfterTokens` as its own launch threshold. Dro
 Lower values distill reflections more often and therefore create more opportunities for post-reflection dropper maintenance. Higher values reduce reflector model calls but leave more observations between reflection and dropper opportunities.
 
 ## `compactAfterTokens`
+
+`proactiveCompaction: false` disables only this threshold trigger. Keep `passive: false` to retain automatic Observer, Reflector and Dropper work. OM's summary hook, manual compaction and Pi's native context-pressure compaction continue to operate. `/om:status` displays the disabled trigger explicitly.
 
 Default: `81000`.
 

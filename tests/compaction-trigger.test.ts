@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { registerCompactionTrigger } from "../src/hooks/compaction-trigger.js";
 import { compactionEntry, rawMessage, textCustomMessage, type TestEntry } from "./fixtures/session.js";
 
-function captureHandler(args: { compactAfterTokens?: number; compactAfterTokensMode?: "calibrated" | "ratio"; compactAfterTokensRatio?: number; passive?: boolean; compactInFlight?: boolean } = {}) {
+function captureHandler(args: { compactAfterTokens?: number; compactAfterTokensMode?: "calibrated" | "ratio"; compactAfterTokensRatio?: number; passive?: boolean; proactiveCompaction?: boolean; compactInFlight?: boolean } = {}) {
 	let handler: ((event: unknown, ctx: unknown) => void) | undefined;
 	const pi = {
 		on: vi.fn((name: string, cb: typeof handler) => {
@@ -18,6 +18,7 @@ function captureHandler(args: { compactAfterTokens?: number; compactAfterTokensM
 			compactAfterTokensMode: args.compactAfterTokensMode ?? "calibrated",
 			compactAfterTokensRatio: args.compactAfterTokensRatio ?? 0.68,
 			passive: args.passive ?? false,
+			proactiveCompaction: args.proactiveCompaction ?? true,
 		},
 		compactInFlight: args.compactInFlight ?? false,
 		observerPromise: new Promise(() => {}),
@@ -68,6 +69,17 @@ describe("V3 compaction trigger", () => {
 
 		expect(runtime.compactInFlight).toBe(false);
 		expect(ctx.compact).not.toHaveBeenCalled();
+	});
+
+	it("does not schedule threshold compaction when an external trigger owns it", async () => {
+		const { handler, runtime } = captureHandler({ proactiveCompaction: false });
+		const ctx = fakeCtx([dueBranch]);
+		handler(agentSettled(), ctx);
+		await vi.runAllTimersAsync();
+		expect(runtime.config.passive).toBe(false);
+		expect(runtime.compactInFlight).toBe(false);
+		expect(ctx.compact).not.toHaveBeenCalled();
+		expect(ctx.ui.notify).not.toHaveBeenCalled();
 	});
 
 	it("calls compact when compactAfterTokens is reached", async () => {

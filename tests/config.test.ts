@@ -38,6 +38,7 @@ describe("V3 config", () => {
 		expect(DEFAULTS).toEqual({
 			observeAfterTokens: 10000,
 			reflectAfterTokens: 20000,
+			proactiveCompaction: true,
 			compactAfterTokens: 81000,
 			compactAfterTokensMode: "calibrated",
 			compactAfterTokensRatio: 0.68,
@@ -49,6 +50,13 @@ describe("V3 config", () => {
 			debugLog: false,
 		});
 		expect(loadConfig(cwd, {})).toEqual(DEFAULTS);
+	});
+
+	it("disables only proactive compaction when an external trigger is used", () => {
+		writeJson(join(cwd, ".pi", "settings.json"), {
+			"observational-memory": { proactiveCompaction: false },
+		});
+		expect(loadConfig(cwd, {})).toEqual({ ...DEFAULTS, proactiveCompaction: false });
 	});
 
 	it("merges global, project, and env V3 settings in order", () => {

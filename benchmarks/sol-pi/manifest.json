@@ -1,0 +1,45 @@
+{
+  "benchmark": "Terminal-Bench 2.0",
+  "task": "fix-code-vulnerability",
+  "task_commit": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+  "image": "alexgshaw/fix-code-vulnerability@sha256:cac325252991f823713b2d0441502972901dd782bd67f66c03d9b1e410dac5c0",
+  "architecture": "linux/amd64 on macOS arm64",
+  "om_commit": "9f1cf4e2eeecd5bd1c49b8017d818e7cd07b65a0",
+  "sol_pi_commit": "d7ecfc089944f0d04b80122a0a9a6ca0d786f3d0",
+  "pi_version": "0.85.1",
+  "harbor_version": "0.23.0",
+  "model": "pingcap/gpt-5.6-luna",
+  "main_thinking": "medium",
+  "worker_configuration": "unchanged OM defaults, same session model",
+  "arms": [
+    "original",
+    "baseline",
+    "combined",
+    "pack",
+    "plan"
+  ],
+  "repetitions": 2,
+  "agent_timeout_sec": 900,
+  "planning_prompt": "identical in all arms",
+  "economic_ratio": 12.5,
+  "summary_estimate_tokens": 1000,
+  "observation_pack": "upstream defaults: >10 KiB; 2 full sends; 1 KiB placeholder",
+  "cost": "Pi configured prices and OpenAI Standard API equivalent; neither is a verified invoice",
+  "analysis_rules": [
+    "Exclude provider or harness failures from quality/cost comparisons; retain logs",
+    "Report worker usage and actual cache-read tokens",
+    "Report actual compaction/pack/recall exposure",
+    "No statistically reliable superiority claim from a single task and repetition",
+    "Do not reduce worker or compaction thresholds to force exposure"
+  ],
+  "selection_note": "Cython reference solution failed 1 of 11 checks; excluded before any successful model trial. OpenAI OAuth endpoint reset connections; existing Pi Luna provider succeeds.",
+  "harness_calibration": "Initial four Bottle pilot runs used a CLI tool allowlist that omitted extension tools. Excluded. Final runs explicitly allow and assert update_plan, recall, and obs_recall where applicable.",
+  "repeat_reason": "One baseline Reflector response returned HTTP 503; repeat all arms once to expose run variance. Both attempts retained in analysis.",
+  "concurrency": 2,
+  "additional_control": "Add two original OM runs without update_plan/tool-guidelines to measure planning overhead. Matched-plan baseline remains for mechanism ablations. Added after first four valid attempts, before observing original-control outcomes.",
+  "concurrency_note": "Initial ablations used two concurrent trials. After 429/503 interruptions, original controls and replacements run serially; this is a confound and is disclosed.",
+  "interrupted_replacements": [
+    "pack repetition 2",
+    "plan repetition 2"
+  ]
+}

@@ -5,6 +5,7 @@ import type { Static } from "typebox";
 import { debugLog } from "../../debug-log.js";
 import { hashId } from "../../ids.js";
 import { logAgentStreamError } from "../stream-errors.js";
+import { logWorkerUsage } from "../usage.js";
 import { resolveWorkerStreamSimple, type StreamableModelRegistry, type WorkerStreamSimple } from "../worker-stream.js";
 import { AGENT_LOOP_MAX_TOKENS, boundedMaxTokens } from "../../model-budget.js";
 import { truncateRecordContent } from "../../serialize.js";
@@ -198,6 +199,7 @@ export async function runReflector(args: RunReflectorArgs): Promise<Reflection[]
 	for await (const event of stream) {
 		// Tool execution collects records.
 		logAgentStreamError("reflector", event);
+		logWorkerUsage("reflector", event);
 	}
 	await stream.result();
 	const acceptedReflections = Array.from(accumulated.values());

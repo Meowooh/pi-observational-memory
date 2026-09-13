@@ -9,6 +9,7 @@ export function registerCompactionTrigger(pi: ExtensionAPI, runtime: Runtime): v
 	pi.on("agent_settled", (_event, ctx) => {
 		runtime.ensureConfig(ctx.cwd);
 		if (runtime.config.passive === true) return;
+		if (runtime.config.proactiveCompaction === false) return;
 		if (runtime.compactInFlight) return;
 
 		const entries = ctx.sessionManager?.getBranch?.() as Entry[] | undefined;
